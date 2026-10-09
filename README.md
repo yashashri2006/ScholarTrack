@@ -1,71 +1,94 @@
-# ScholarTrack
+# 🎓 ScholarTrack — MahaDBT Scholarship Application Tracker
 
+<div align="center">
 
-**ScholarTrack** is an Android application that helps engineering students and scholarship coordinators track MahaDBT scholarship applications, from eligibility to payment. It covers the full process: checking eligible schemes, collecting documents, coordinator verification, the signed hard copy, submission to the college scholarship section, and approval.
-**Status**: Complete.
+<img src="app\src\main\res\drawable\scholartrack_image.jpg" alt="ScholarTrack Logo" width="130" />
 
-## The Problem It Solves
+### A step-by-step scholarship tracking companion for engineering students
 
-The MahaDBT scholarship application process involves many manual steps: gathering documents, filling out the MahaDBT online form, showing the form to class and department coordinators, submitting a signed hard copy to the college scholarship section, and waiting for approval and payment. Students often miss deadlines, forget which documents are required for their category, or lose track of their application's current stage. Coordinators struggle to track the progress of hundreds of students. ScholarTrack digitizes this workflow by providing step-by-step tracking, eligibility checks, and direct communication channels.
+**MahaDBT Eligibility · Document Checklist · Coordinator Verification · Payment Tracking**
 
-## Features
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Java%2011-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Min SDK](https://img.shields.io/badge/Min%20SDK-24%20(Android%207.0)-blue?style=for-the-badge)
+![Target SDK](https://img.shields.io/badge/Target%20SDK-35-blueviolet?style=for-the-badge)
+![Database](https://img.shields.io/badge/Storage-SQLite%20%7C%20Firebase-FFA000?style=for-the-badge&logo=firebase&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
-### Implemented
-* **Role-Based Authentication**: Register and login as a Student or a Coordinator using Firebase Auth.
-* **Scheme Eligibility Checker**: Filters available scholarships based on category, income, gender, and special conditions.
-* **Application Tracker**: An 8-stage tracker tracking the process from eligibility to credited payment.
-* **Document Checklist**: Local SQLite database to track the status of required documents (e.g., Xerox vs Original).
-* **Coordinator Dashboard**: Coordinators can view student applications and update verification stages.
-* **Direct Contacts**: Save contact details for coordinators and the scholarship section, with one-tap Intent to Call or SMS.
-* **Grievance System**: Draft and send issues regarding applications.
+</div>
 
+---
 
-### Planned
-* Reading official application status directly from the MahaDBT portal.
-* Document certificate scanning and uploading.
-* Storing Aadhaar and bank account numbers securely.
+## 📖 Overview
 
-## Screens
+**ScholarTrack** is an Android application designed to help engineering students and scholarship coordinators track MahaDBT scholarship applications—from checking scheme eligibility to monitoring approval and payment.
 
-| Screen / Feature | Class Name |
-| :--- | :--- |
-| Splash Screen | `SplashActivity` |
-| User Login | `LoginActivity` |
-| Role-based Registration | `RegisterActivity` |
-| Student Dashboard | `StudentHomeActivity` (Hosts `HomeFragment`, `TrackerFragment`, `DocumentFragment`, `HelpFragment`) |
-| Coordinator Dashboard | `CoordinatorHomeActivity` |
-| Student Application Details | `StudentDetailActivity` |
-| Eligibility Input Form | `EligibilityActivity` |
-| Eligible Schemes List | `SchemeResultsActivity` |
-| Issue / Grievance Drafting | `GrievanceActivity` |
-| Contact Directory | `ContactsActivity` |
+The application organizes the process into clear steps: checking potentially eligible schemes, preparing required documents, completing the online application, obtaining coordinator verification, submitting a signed hard copy to the college scholarship section, and tracking progress toward approval and payment.
 
-## Tech Stack
+ScholarTrack is a **manual tracking companion**. It does not fetch application status directly from the official MahaDBT portal, and its scheme information should be treated as reference data.
 
-| Component | Technology / Version |
-| :--- | :--- |
-| **Language** | Java 11 |
-| **UI** | XML Layouts (Material Components, ConstraintLayout) |
-| **Backend & Auth** | Firebase Realtime Database, Firebase Authentication |
-| **Local Storage** | SQLite, SharedPreferences |
-| **Minimum SDK** | API 24 (Android 7.0) |
-| **Target SDK** | API 35 |
-| **Libraries** | `appcompat`, `material`, `activity`, `constraintlayout`, `firebase-bom`, `core-splashscreen:1.0.1` |
+## ✨ Key Features
 
-*Note: The app does not use any external REST APIs. All reference scheme data is parsed locally from a JSON file, and user data is synced via Firebase.*
+### 🎓 Student Features
 
+- **🔎 Scheme Eligibility Checker**
+  - Filters reference scholarship schemes using category, income, gender, and special conditions.
+  - Displays schemes that may match the details entered by the student.
+- **📊 Eight-Stage Application Tracker**
+  - Tracks progress from eligibility checks through the application process to credited payment.
+  - Records stage progress and related notes.
+- **📄 Document Checklist**
+  - Tracks required documents and their status locally using SQLite.
+  - Supports tracking document types such as Xerox copies and originals.
+- **📞 Coordinator & College Contacts**
+  - Saves contact details for the class coordinator, department coordinator, and scholarship section.
+  - Provides one-tap calling and SMS actions through Android intents.
+- **📝 Grievance Drafting**
+  - Helps students draft issues related to their scholarship applications.
 
-## Architecture
+### 🛡️ Coordinator Features
 
-### Package Structure
-* `com.example.scholartrack.data`: Contains models, Firebase repositories, and SQLite helpers.
-* `com.example.scholartrack.ui`: Contains all Activities, Fragments, and Adapters separated by role (`student`, `coordinator`).
-* `com.example.scholartrack.util`: Helper classes and constants.
+- **🔐 Role-Based Authentication**
+  - Students and coordinators register and log in using Firebase Authentication.
+- **📋 Coordinator Dashboard**
+  - Displays student application information for coordinator review.
+- **✅ Verification Progress**
+  - Allows coordinators to update application verification stages.
+- **👤 Student Application Details**
+  - Provides a detailed view of a student's tracked application.
+
+---
+
+## ⚡ Architecture & Data Flow
+
+ScholarTrack combines locally stored reference data and checklists with cloud-synced user and application information.
+
+```text
+                    ┌─────────────────────────────┐
+                    │       ScholarTrack UI        │
+                    │ Activities, Fragments, Forms │
+                    └──────────────┬──────────────┘
+                                   │
+              ┌────────────────────┼────────────────────┐
+              ▼                    ▼                    ▼
+    ┌──────────────────┐  ┌─────────────────┐  ┌────────────────────┐
+    │ Static Scheme    │  │ Local SQLite    │  │ Firebase           │
+    │ Data             │  │ Database        │  │ Authentication     │
+    │ assets/schemes   │  │ Documents and   │  │ + Realtime Database│
+    │ .json            │  │ drafted issues  │  │ Profiles/stages    │
+    └──────────────────┘  └─────────────────┘  └────────────────────┘
+```
 
 ### Data Flow
-1. **Static Data**: Scholarship schemes and common document requirements are parsed into memory from `assets/schemes.json`.
-2. **Local Data**: Document checklists and drafted grievances are stored in a local SQLite database (`DbHelper.java`).
-3. **Cloud Data**: User profiles, application stage progress, and saved contacts are synced in real-time using Firebase Realtime Database via `FirebaseRepository.java`.
+
+1. **Static reference data:** Scholarship schemes and common document requirements are loaded from `assets/schemes.json`.
+2. **Local storage:** Document checklist data and drafted grievances are stored using `DbHelper.java` and SQLite.
+3. **Cloud data:** User profiles, application progress, and saved contacts are synchronized through Firebase Realtime Database using `FirebaseRepository.java`.
+4. **Authentication:** Firebase Authentication handles user registration and login.
+
+## 🗄️ Firebase Realtime Database Structure
+
+The following is a simplified representation of the database structure:
 
 ### Firebase Database Structure
 ```json
@@ -93,43 +116,148 @@ The MahaDBT scholarship application process involves many manual steps: gatherin
 }
 ```
 
-## Getting Started
+---
 
-### Requirements
-* Android Studio (Ladybug or newer recommended).
-* Java 11.
-* An active Firebase Project.
+## 🧰 Tech Stack
 
-### Setup Instructions
-1. Clone the repository and open it in Android Studio.
-2. **Firebase Setup**:
-   * Create a project in the Firebase Console.
-   * Add an Android app with the package name `com.example.scholartrack`.
-   * Download the `google-services.json` file and place it in the `app/` directory. *(Note: `google-services.json` is intentionally excluded from the repository for security).*
-   * Enable **Email/Password** sign-in under Authentication.
-   * Create a **Realtime Database** and set the rules to allow authenticated users to read/write.
-3. Sync Gradle and run the app on an emulator or physical device.
+| Category | Technology |
+| :--- | :--- |
+| **Platform** | Android |
+| **Language** | Java 11 |
+| **UI** | XML layouts, Material Components, ConstraintLayout |
+| **Authentication** | Firebase Authentication |
+| **Cloud Database** | Firebase Realtime Database |
+| **Local Database** | SQLite |
+| **Preferences** | SharedPreferences |
+| **Static Reference Data** | JSON asset file (`assets/schemes.json`) |
+| **Minimum SDK** | API 24 — Android 7.0 |
+| **Target SDK** | API 35 |
+| **Core Dependencies** | `appcompat`, `material`, `activity`, `constraintlayout`, `firebase-bom`, `core-splashscreen:1.0.1` |
 
-## Test Accounts
+> **API note:** ScholarTrack does not use an external REST API to retrieve MahaDBT application status. Scheme reference data is loaded locally, while application-related user data is synchronized through Firebase.
 
-To test the application, launch the app and navigate to the Registration screen.
-* **Student**: Select the "Student" role from the dropdown, fill in the details, and register.
-* **Coordinator**: Select the "Coordinator" role. You will be prompted to enter a Coordinator Access Code. Use the hard-coded test code defined in `Constants.java` (`Constants.COORDINATOR_CODE`).
+## 🧭 Screens & Activities
 
-## Important Notes and Limitations
+| Screen / Feature | Class Name |
+| :--- | :--- |
+| Splash Screen | `SplashActivity` |
+| User Login | `LoginActivity` |
+| Role-Based Registration | `RegisterActivity` |
+| Student Dashboard | `StudentHomeActivity` |
+| Student Dashboard Fragments | `HomeFragment`, `TrackerFragment`, `DocumentFragment`, `HelpFragment` |
+| Coordinator Dashboard | `CoordinatorHomeActivity` |
+| Student Application Details | `StudentDetailActivity` |
+| Eligibility Input Form | `EligibilityActivity` |
+| Eligible Schemes List | `SchemeResultsActivity` |
+| Issue / Grievance Drafting | `GrievanceActivity` |
+| Contact Directory | `ContactsActivity` |
 
-* **Reference Data Only**: The scheme data provided in the app is for reference purposes. Final eligibility and scheme details must always be confirmed on the official MahaDBT portal.
-* **No API Integration**: The app cannot read the official application status from the MahaDBT servers. It is a manual tracking tool for students and college coordinators.
-* **Privacy**: The app does **not** store sensitive information such as Aadhaar numbers, bank account numbers, or scanned certificate images. 
-* **Affiliation**: This project was built for a college competition and is **not affiliated with or endorsed by the Government of Maharashtra**.
+## 📂 Project Structure
 
+The following is the high-level package organization described for ScholarTrack. Actual filenames may vary by project implementation.
 
-## Roadmap
+```text
+ScholarTrack/
+├── app/
+│   └── src/main/
+│       ├── assets/
+│       │   └── schemes.json
+│       ├── java/com/example/scholartrack/
+│       │   ├── data/
+│       │   │   ├── models/
+│       │   │   ├── FirebaseRepository.java
+│       │   │   └── DbHelper.java
+│       │   ├── ui/
+│       │   │   ├── student/
+│       │   │   └── coordinator/
+│       │   └── util/
+│       │       └── Constants.java
+│       └── res/
+│           ├── layout/
+│           ├── drawable/
+│           └── values/
+└── README.md
+```
 
-- [ ] Integrate MahDBT portal scraping (if permitted) for automated status updates.
-- [ ] Add support for multiple academic years.
-- [ ] Implement push notifications for college-wide announcements.
+---
 
-## Author 
+## 🚀 Getting Started
 
-* **Author**: Yashashri Santosh Kawalkar, CSE(AIML), P. R. Pote Patil College of Engineering & Management, Amravati
+### Prerequisites
+
+- Android Studio (Ladybug or newer recommended)
+- Java 11
+- Android emulator or physical Android device running Android 7.0 (API 24) or later
+- A Firebase project
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <YOUR_SCHOLARTRACK_REPOSITORY_URL>
+   cd ScholarTrack
+   ```
+
+   Replace the placeholder URL with the actual repository URL.
+
+2. **Open the project**
+
+   - Open Android Studio.
+   - Select **Open** and choose the `ScholarTrack` project directory.
+   - Allow Gradle to sync.
+
+3. **Configure Firebase**
+
+   - Create a project in the [Firebase Console](https://console.firebase.google.com/).
+   - Register an Android app with package name `com.example.scholartrack`.
+   - Download `google-services.json` and place it in the `app/` directory.
+   - Ensure the Firebase configuration file is excluded from public version control when appropriate.
+   - Enable **Email/Password** under Firebase Authentication.
+   - Create a Firebase Realtime Database and configure rules appropriate to your development or production environment.
+
+   **Security warning:** Do not deploy an open database rule such as unrestricted read/write access to production. Restrict access by authenticated user and role, and validate authorization for coordinator-only operations.
+
+4. **Run the app**
+
+   - Connect a device with USB debugging enabled or start an emulator.
+   - Select the app configuration and click **Run** in Android Studio.
+
+## 🧪 Test Accounts
+
+Create test users from the app's Registration screen:
+
+- **Student:** Select the `Student` role and complete the registration form.
+- **Coordinator:** Select the `Coordinator` role and enter the coordinator access code defined by `Constants.COORDINATOR_CODE` in `Constants.java`.
+
+Use only a development/test access code for demonstrations. A hard-coded coordinator code is not a strong production authorization mechanism; coordinator permissions should be enforced by trusted backend rules or server-side logic.
+
+## ⚠️ Important Notes & Limitations
+
+- **Reference scheme data:** Eligibility results are indicative only. Confirm current scheme conditions, required documents, deadlines, and final eligibility on the official [MahaDBT portal](https://mahadbt.maharashtra.gov.in/).
+- **Manual status tracking:** ScholarTrack does not read official application status directly from MahaDBT. Students and coordinators must update tracked progress in the app.
+- **Sensitive data:** The stated implementation does not store Aadhaar numbers, bank account numbers, or scanned certificate images.
+- **Privacy and access control:** Configure Firebase Authentication and database rules carefully. Do not store sensitive personal information unless there is a clear need and appropriate security controls.
+- **Affiliation:** ScholarTrack is a college competition project and is **not affiliated with or endorsed by the Government of Maharashtra**.
+
+## 🛣️ Roadmap
+
+- [ ] Explore permitted options for automated application-status updates from MahaDBT.
+- [ ] Add certificate scanning and document uploading.
+- [ ] Add secure storage for Aadhaar and bank account details only if required and after implementing appropriate security and privacy safeguards.
+- [ ] Support multiple academic years.
+- [ ] Add push notifications for college-wide announcements.
+
+## 👩‍💻 Author
+
+**Yashashri Santosh Kawalkar**  
+CSE (AIML)  
+P. R. Pote Patil College of Engineering & Management, Amravati
+
+---
+
+## 📄 Project Status
+
+**Status: Complete**
+
+The current implementation supports role-based authentication, scheme eligibility filtering, application-stage tracking, local document checklists, coordinator progress updates, contact shortcuts, and grievance drafting. Items listed in the roadmap are planned enhancements and are not represented as implemented features.
