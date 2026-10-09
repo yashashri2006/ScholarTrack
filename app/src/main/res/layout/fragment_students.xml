@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Students Fragment layout for Coordinator -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_header"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md"
+        android:paddingTop="@dimen/spacing_lg">
+
+        <TextView
+            style="@style/TextStyle.HeadlineSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Students"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.ScholarTrack.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:hint="Search name or roll no">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearchStudents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerStudentFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:layout_margin="@dimen/spacing_md"
+        android:background="@drawable/bg_card_rounded"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingEnd="@dimen/spacing_md" />
+
+    <TextView
+        android:id="@+id/txtNoStudents"
+        style="@style/TextStyle.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_xl"
+        android:text="No students found"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listStudents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/divider"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

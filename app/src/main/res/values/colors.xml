@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unit 2: Externalised colour resources. All colour tokens for ScholarTrack Material 3 theme. -->
+<resources>
+    <!-- Brand colours -->
+    <color name="primary">#FF1A4D8F</color>
+    <color name="primary_dark">#FF0D2F5C</color>
+    <color name="primary_light">#FF3A6DB0</color>
+    <color name="accent">#FFF9A825</color>
+    <color name="accent_dark">#FFC17900</color>
+
+    <!-- Surfaces -->
+    <color name="background">#FFEEF3FA</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#FFE7EDF5</color>
+    <color name="card_background">#FFFFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FF1B2430</color>
+    <color name="text_secondary">#FF5A6A7A</color>
+    <color name="text_hint">#FF9EAAB8</color>
+    <color name="text_on_primary">#FFFFFFFF</color>
+    <color name="text_on_accent">#FF1B2430</color>
+
+    <!-- Status chip colours -->
+    <color name="status_ready">#FF4CAF50</color>
+    <color name="status_ready_bg">#FFE8F5E9</color>
+    <color name="status_applied">#FFFFC107</color>
+    <color name="status_applied_bg">#FFFFF8E1</color>
+    <color name="status_not_ready">#FF9E9E9E</color>
+    <color name="status_not_ready_bg">#FFF5F5F5</color>
+    <color name="status_received">#FF2196F3</color>
+    <color name="status_received_bg">#FFE3F2FD</color>
+
+    <!-- Stage stepper -->
+    <color name="stage_completed">#FF4CAF50</color>
+    <color name="stage_current">#FF1A4D8F</color>
+    <color name="stage_pending">#FFBDBDBD</color>
+    <color name="stage_line">#FFE0E0E0</color>
+
+    <!-- Gradient -->
+    <color name="gradient_start">#FF1A4D8F</color>
+    <color name="gradient_end">#FF3A7BD5</color>
+
+    <!-- Error and warning -->
+    <color name="error">#FFD32F2F</color>
+    <color name="error_bg">#FFFFEBEE</color>
+    <color name="warning">#FFF57C00</color>
+    <color name="warning_bg">#FFFFF3E0</color>
+
+    <!-- Dark theme overrides (used in values-night) -->
+    <color name="dark_background">#FF121820</color>
+    <color name="dark_surface">#FF1C2530</color>
+    <color name="dark_surface_variant">#FF263240</color>
+    <color name="dark_card_background">#FF1C2530</color>
+    <color name="dark_text_primary">#FFE8EDF2</color>
+    <color name="dark_text_secondary">#FF8A9AAB</color>
+
+    <!-- Basic -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="ripple_light">#1F1A4D8F</color>
+    <color name="ripple_dark">#1FFFFFFF</color>
+    <color name="divider">#FFE0E0E0</color>
+
+    <!-- Bottom navigation -->
+    <color name="nav_selected">#FF1A4D8F</color>
+    <color name="nav_unselected">#FF9EAAB8</color>
+</resources>

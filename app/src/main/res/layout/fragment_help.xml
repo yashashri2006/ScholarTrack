@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Help Fragment layout – saved contacts, default contacts from XML, contacts activity button -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md">
+
+        <TextView
+            style="@style/TextStyle.HeadlineSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/help_title" />
+
+        <!-- Saved contacts (populated by Firebase) -->
+        <TextView
+            style="@style/TextStyle.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/contacts_title" />
+
+        <LinearLayout
+            android:id="@+id/layoutSavedContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <!-- Button to edit contacts -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContactsActivity"
+            style="@style/Widget.ScholarTrack.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="Edit / Save Contacts" />
+
+        <!-- Default contacts from contacts.xml (XmlPullParser) -->
+        <TextView
+            style="@style/TextStyle.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/helpline_title" />
+
+        <LinearLayout
+            android:id="@+id/layoutDefaultContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_xxl"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>

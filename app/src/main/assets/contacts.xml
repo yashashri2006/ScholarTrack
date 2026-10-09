@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unit 6: XML parsing with XmlPullParser – default office contact entries.
+     Values marked [PLACEHOLDER] must be replaced by the college administration.
+     Parsed in HelpFragment. -->
+<contacts>
+    <office name="Class Coordinator">
+        <person>[Class Coordinator Name]</person>
+        <email>[Email Address]</email>
+        <phone>[Phone Number]</phone>
+        <note>Contact your class teacher first for any scholarship queries.</note>
+    </office>
+    <office name="Department Scholarship Coordinator">
+        <person>[Scholarship Coordinator Name]</person>
+        <email>[Email Address]</email>
+        <phone>[Phone Number]</phone>
+        <note>Handles department-level verification and hard copy signing.</note>
+    </office>
+    <office name="College Scholarship Section">
+        <person>[Scholarship Section Contact]</person>
+        <email>[Email Address]</email>
+        <phone>[Phone Number]</phone>
+        <timings>Mon–Fri, 10:00 AM – 4:00 PM</timings>
+        <location>Administrative Block, Room 12 (Ground Floor)</location>
+        <geoLat>18.5204</geoLat>
+        <geoLng>73.8567</geoLng>
+        <note>Bring all original documents when visiting.</note>
+    </office>
+    <helpline name="Scholarship Helpline">
+        <phone>[Helpline Number]</phone>
+        <timings>Mon–Sat, 9:00 AM – 6:00 PM</timings>
+    </helpline>
+</contacts>

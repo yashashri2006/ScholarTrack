@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- StudentDetailActivity layout for Coordinator -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.ScholarTrack.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:title="Student Details"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
+
+            <TextView
+                android:id="@+id/txtStudentDetailName"
+                style="@style/TextStyle.HeadlineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtStudentDetailRollClass"
+                style="@style/TextStyle.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xxs" />
+
+            <com.example.scholartrack.ui.widget.StepperView
+                android:id="@+id/stepperViewDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarkVerified"
+                style="@style/Widget.ScholarTrack.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Verify Application (Stage 4)" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarkSigned"
+                style="@style/Widget.ScholarTrack.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Mark Hard Copy Signed (Stage 5)" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddQuery"
+                style="@style/Widget.ScholarTrack.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="Add Query Note" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

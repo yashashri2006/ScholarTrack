@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unit 3: EligibilityActivity layout – Spinner, RadioGroup, CheckBoxes -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.ScholarTrack.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:title="@string/eligibility_title"
+            app:titleTextColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
+
+            <!-- Category Spinner -->
+            <TextView
+                style="@style/TextStyle.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="@string/category" />
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:background="@drawable/bg_card_rounded"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md" />
+
+            <!-- Income -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilIncome"
+                style="@style/Widget.ScholarTrack.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:hint="@string/annual_family_income">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Gender RadioGroup -->
+            <TextView
+                style="@style/TextStyle.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="@string/gender" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/gender_male" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/gender_female" />
+
+                <RadioButton
+                    android:id="@+id/rbOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender_other" />
+            </RadioGroup>
+
+            <!-- CheckBoxes -->
+            <TextView
+                style="@style/TextStyle.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Other Conditions" />
+
+            <CheckBox
+                android:id="@+id/cbMinority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/minority_community" />
+
+            <CheckBox
+                android:id="@+id/cbPwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/person_with_disability" />
+
+            <CheckBox
+                android:id="@+id/cbHostel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hostel_resident" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCheckEligibility"
+                style="@style/Widget.ScholarTrack.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                android:text="@string/check_eligibility" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

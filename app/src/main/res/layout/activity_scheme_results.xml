@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unit 3: SchemeResultsActivity layout – ListView with custom adapter, empty state -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.ScholarTrack.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:title="@string/eligible_schemes_title"
+        app:titleTextColor="@color/white" />
+
+    <!-- Reference note -->
+    <TextView
+        style="@style/TextStyle.BodySmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/warning_bg"
+        android:padding="@dimen/spacing_sm"
+        android:text="@string/schemes_reference_note"
+        android:textColor="@color/warning" />
+
+    <TextView
+        android:id="@+id/txtCompiledOn"
+        style="@style/TextStyle.LabelMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_xs" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/txtEmptySchemes"
+        style="@style/TextStyle.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_xl"
+        android:text="@string/no_schemes_found"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listSchemes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/divider"
+        android:dividerHeight="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenMahaDBT"
+        style="@style/Widget.ScholarTrack.Button.Outlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_md"
+        android:text="@string/open_mahadbt" />
+
+</LinearLayout>

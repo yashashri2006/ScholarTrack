@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bottom navigation menu for Student role -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="@string/nav_home" />
+    <item
+        android:id="@+id/nav_documents"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/nav_documents" />
+    <item
+        android:id="@+id/nav_tracker"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="@string/nav_tracker" />
+    <item
+        android:id="@+id/nav_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/nav_help" />
+</menu>

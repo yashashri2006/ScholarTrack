@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Slide-in from right animation for activity transitions -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="300"
+        android:fromXDelta="100%p"
+        android:interpolator="@android:interpolator/decelerate_cubic"
+        android:toXDelta="0" />
+    <alpha
+        android:duration="300"
+        android:fromAlpha="0.5"
+        android:toAlpha="1.0" />
+</set>

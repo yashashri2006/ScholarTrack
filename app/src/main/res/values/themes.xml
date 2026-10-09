@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Unit 2: Material 3 Light Theme for ScholarTrack -->
+    <style name="Base.Theme.ScholarTrack" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand colour -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorPrimaryContainer">@color/surface_variant</item>
+
+        <!-- Secondary / Accent -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/text_on_accent</item>
+        <item name="colorSecondaryContainer">@color/status_applied_bg</item>
+
+        <!-- Surface and background -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/error</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+
+        <!-- Default widget styles -->
+        <item name="materialCardViewStyle">@style/Widget.ScholarTrack.Card</item>
+        <item name="materialButtonStyle">@style/Widget.ScholarTrack.Button</item>
+        <item name="textInputStyle">@style/Widget.ScholarTrack.TextInputLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.ScholarTrack.BottomNav</item>
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/poppins</item>
+
+        <!-- Ripple -->
+        <item name="android:colorControlHighlight">@color/ripple_light</item>
+    </style>
+
+    <style name="Theme.ScholarTrack" parent="Base.Theme.ScholarTrack" />
+
+    <!-- Splash theme (Android 12+ API 31+) -->
+    <style name="Theme.ScholarTrack.Splash" parent="Theme.SplashScreen">
+        <!-- Background colour of the splash screen -->
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <!-- The icon to display -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/empty_splash_icon</item>
+        <!-- The theme to switch to after the splash screen finishes -->
+        <item name="postSplashScreenTheme">@style/Theme.ScholarTrack</item>
+    </style>
+</resources>

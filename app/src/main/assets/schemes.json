@@ -1,0 +1,243 @@
+{
+  "compiledOn": "2024-10",
+  "source": "https://mahadbt.maharashtra.gov.in",
+  "commonDocuments": [
+    "Aadhaar card",
+    "Aadhaar-linked bank passbook",
+    "Bonafide certificate and fee receipt",
+    "Domicile proof"
+  ],
+  "schemes": [
+    {
+      "id": "sc_goi_pms",
+      "name": "Government of India Post-Matric Scholarship (SC)",
+      "department": "Social Justice and Special Assistance",
+      "benefit": "Tuition fees, maintenance allowance and other allowances",
+      "categories": ["SC"],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Caste certificate",
+        "Income certificate",
+        "Caste validity certificate (mandatory for professional degree courses)",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Parents' declaration on beneficiary children",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "st_goi_pms",
+      "name": "Post Matric Scholarship Scheme, Government of India (ST)",
+      "department": "Tribal Development",
+      "benefit": "Tuition fees and maintenance allowance for ST students",
+      "categories": ["ST"],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Caste certificate",
+        "Income certificate",
+        "Caste validity certificate (mandatory for professional degree courses)",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "obc_pms",
+      "name": "Post Matric Scholarship to OBC Students",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Tuition fees and maintenance allowance",
+      "categories": ["OBC"],
+      "maxIncome": 150000,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": false,
+      "documents": [
+        "Caste certificate",
+        "Non-creamy layer certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "vjnt_pms",
+      "name": "Post Matric Scholarship to VJNT Students",
+      "department": "Vimukt Jati and Nomadic Tribes",
+      "benefit": "Tuition fees and maintenance allowance",
+      "categories": ["VJNT"],
+      "maxIncome": 150000,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": false,
+      "documents": [
+        "Caste certificate",
+        "Caste validity certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "sbc_pms",
+      "name": "Post Matric Scholarship to SBC Students",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Tuition fees and maintenance allowance",
+      "categories": ["SBC"],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Caste certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "obc_tuition",
+      "name": "Tuition Fees and Examination Fees to OBC Students",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Full tuition and examination fee reimbursement",
+      "categories": ["OBC"],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Caste certificate",
+        "Non-creamy layer certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "ebc_rajarshri",
+      "name": "Rajarshri Chhatrapati Shahu Maharaj Shikshan Shulkh Shikshavrutti Yojana (EBC)",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Tuition fee and examination fee for Open/EBC students",
+      "categories": ["Open / EBC"],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Ration card",
+        "Gap certificate (only if there is a gap in education)",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "girls_rajarshri",
+      "name": "Rajarshri Chhatrapati Shahu Maharaj Tuition Fee Scholarship (Girls)",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Tuition fee scholarship specifically for female students",
+      "categories": [],
+      "maxIncome": 0,
+      "femaleOnly": true,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "hostel_dr_panjabrao",
+      "name": "Dr. Panjabrao Deshmukh Vastigruh Nirvah Bhatta Yojana",
+      "department": "Other Backward Bahujan Welfare",
+      "benefit": "Hostel maintenance allowance for approved hostel residents",
+      "categories": [],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": true,
+      "pwdOnly": false,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Hostel certificate",
+        "Income certificate",
+        "Caste certificate",
+        "Bonafide certificate and fee receipt",
+        "Ration card"
+      ]
+    },
+    {
+      "id": "minority_dte",
+      "name": "Scholarship for Minority Communities, Higher and Professional Courses (DTE)",
+      "department": "Directorate of Technical Education / Minority Development",
+      "benefit": "Tuition fees and maintenance for minority community students",
+      "categories": [],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": false,
+      "minorityOnly": true,
+      "verify": true,
+      "documents": [
+        "Minority community certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Fee receipt"
+      ]
+    },
+    {
+      "id": "pwd_pms",
+      "name": "Post-Matric Scholarship for Persons with Disability",
+      "department": "Social Justice and Special Assistance",
+      "benefit": "Tuition fees and maintenance for students with disabilities",
+      "categories": [],
+      "maxIncome": 0,
+      "femaleOnly": false,
+      "hostelOnly": false,
+      "pwdOnly": true,
+      "minorityOnly": false,
+      "verify": true,
+      "documents": [
+        "Disability certificate",
+        "Income certificate",
+        "HSC/SSC or last year marksheet",
+        "CAP allotment letter",
+        "Fee receipt"
+      ]
+    }
+  ]
+}
