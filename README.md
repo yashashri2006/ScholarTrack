@@ -132,4 +132,4 @@ To test the application, launch the app and navigate to the Registration screen.
 
 ## Author 
 
-* **Author**: Yashashri Santosh Kawalkar, CSE(AIML), P. R. Pote Patil College of Engineering & Management, Amravat
+* **Author**: Yashashri Santosh Kawalkar, CSE(AIML), P. R. Pote Patil College of Engineering & Management, Amravati
